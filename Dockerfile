@@ -12,8 +12,10 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get -y install curl git nodejs
 
 RUN gem install jekyll
 
+ADD entrypoint.sh /tmp
+
+ENTRYPOINT ["/bin/bash", "/tmp/entrypoint.sh"]
+
 VOLUME /jekyll/src
 
 EXPOSE 4000
-
-ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
