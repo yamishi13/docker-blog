@@ -17,4 +17,6 @@ if [ $clone == 1 ] ; then
   git clone https://github.com/yamishi13/blog.git /jekyll/src/
 fi
 
+cd /jekyll/src/
+
 jekyll serve --watch -H $host -P $port
